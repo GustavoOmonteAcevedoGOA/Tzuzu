@@ -88,3 +88,15 @@ function Entrada(edad){
 let edad5 = prompt("ingrese edad")
 
 Entrada(edad5);
+
+function comprobar2(){
+    let pedir = prompt('Contraseña: ')
+    if (pedir.toLowerCase() == contrasena.toLowerCase() ) {
+        alert('Acceso concedido');
+    }
+    else{
+        alert('Acceso denegado');
+    }
+}
+const contrasena='contraseña';
+comprobar2(contrasena);
