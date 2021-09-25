@@ -44,3 +44,47 @@ function mayorOmenor(edad3){
 function fecha(){
     
 }
+
+function divicion(divisor,dividendo){
+    let resultado = divisor / dividendo;
+    if (resultado == 0) {
+        prompt("error")
+    }else{
+        prompt(`la division es ${resultado}`)
+    }
+
+}
+let divisor = prompt("ingrese el divisor")
+let dividendo =prompt("ingrese el dividendo")
+divicion(divisor,dividendo);
+
+
+function Tributar(edad,ingresos){
+    if (edad > 16 && ingresos >= 1000) {
+        prompt("tiene que tributar")
+    }else{
+        prompt("no puede tributar")
+    }
+
+}
+let edad4 = prompt("ingrese edad")
+let ingresos =prompt("ingrese ingresos")
+Tributar(edad4,ingresos);
+
+
+
+
+function Entrada(edad){
+    if (edad < 4) {
+        prompt("tiene entrada gratis")
+    }else if(edad>=4 && edad<=18){
+        prompt("su entrada es de 5$")
+    
+    }else if(edad>18){
+        prompt("su entrada es de 10$")
+    }
+
+}
+let edad5 = prompt("ingrese edad")
+
+Entrada(edad5);
