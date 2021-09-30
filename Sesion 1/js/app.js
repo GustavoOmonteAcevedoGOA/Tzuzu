@@ -1,3 +1,4 @@
+/*
 let edad = 123412;
 let nombre = "Tzuzul";
 let auto = true;
@@ -100,3 +101,32 @@ function comprobar2(){
 }
 const contrasena='contraseña';
 comprobar2(contrasena);
+*/
+
+const boton = document.querySelector('.boton');
+
+
+
+
+const body = document.querySelector('body');
+boton.addEventListener('click', ()=>{
+    
+    if(body.classList.contains('bgc')){
+        body.classList.remove('bgc');
+    }else{
+        body.classList.add('bgc');
+
+    }
+})
+
+const body = document.querySelector('ejemplo');
+boton.addEventListener('click', ()=>{
+    
+    if(body.classList.contains('ejemplo')){
+        body.classList.remove('ejemplo');
+    }else{
+        body.classList.add('ejemplo');
+
+    }
+})
+
