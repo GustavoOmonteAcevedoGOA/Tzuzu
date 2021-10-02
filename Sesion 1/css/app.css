@@ -4,3 +4,19 @@
 .ejemplo {
   background-color: green;
 }
+.btn-semaforo {
+  margin-top: 50px;
+}
+.semaforo {
+  font-size: 48px;
+  background-color: white;
+}
+.semaforo.rojo {
+  background-color: red;
+}
+.semaforo.amarillo {
+  background-color: yellow;
+}
+.semaforo.verde {
+  background-color: green;
+}

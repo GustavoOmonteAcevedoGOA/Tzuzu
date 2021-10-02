@@ -119,14 +119,39 @@ boton.addEventListener('click', ()=>{
     }
 })
 
-const body = document.querySelector('ejemplo');
+const ejemplo = document.querySelector('.ejemplo');
 boton.addEventListener('click', ()=>{
     
-    if(body.classList.contains('ejemplo')){
-        body.classList.remove('ejemplo');
+    if(ejemplo.classList.contains('ejemplo')){
+        ejemplo.classList.remove('ejemplo');
     }else{
-        body.classList.add('ejemplo');
+        ejemplo.classList.add('ejemplo');
 
     }
 })
+
+const btnSemaforo = document.querySelector('.btn-semaforo');
+const semaforo = document.querySelector('.semaforo');
+let contador= 1;
+
+btnSemaforo.addEventListener('click', ()=>{
+    if (contador==1) {
+        semaforo.classList.toggle('verde');
+        semaforo.classList.remove('rojo');
+        contador++;
+        console.log(contador);
+        
+    }else if(contador==2){
+        semaforo.classList.toggle('verde');
+        semaforo.classList.toggle('amarillo');
+        contador++;
+    }else if(contador==3){
+        semaforo.classList.toggle('amarillo');
+        semaforo.classList.add('rojo');
+        contador=1;;
+    }
+
+    semaforo.style.bac
+})
+
 
