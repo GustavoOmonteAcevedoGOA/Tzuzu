@@ -155,3 +155,27 @@ btnSemaforo.addEventListener('click', ()=>{
 })
 
 
+
+const parImpar = document.querySelector('.parimpar');
+const btnParimpar = document.querySelector('.btn-parimpar');
+
+
+
+btnParimpar.addEventListener('click',()=>{
+
+    for (let i = 5; i < 11; i++) {
+        let parrafo = document.createElement("p");
+        if (i%2==0) {
+            parImpar.appendChild(parrafo);
+            parrafo.innerHTML = `${i} Par`;
+            parrafo.style.background="blue";
+            parrafo.style.color="yellow";
+        }else{
+            parImpar.appendChild(parrafo);
+            parrafo.innerHTML = `${i} Impar`;
+            parrafo.style.background="pink";
+            parrafo.style.color="purple";    
+        }
+    }
+});
+

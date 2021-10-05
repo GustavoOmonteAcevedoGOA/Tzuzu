@@ -1,0 +1,10 @@
+.amarillo {
+  color: yellow;
+}
+.amarillo:hover {
+  color: red;
+}
+.alumnos {
+  background-color: green;
+  color: white;
+}
