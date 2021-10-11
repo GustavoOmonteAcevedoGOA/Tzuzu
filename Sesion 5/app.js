@@ -31,3 +31,27 @@ for (let i = 0; i <alumnosTabla.length; i++) {
 //Conjunto de informacion
 //lista =[["Tuzul", "Calle ...", "Hombre", ""],[]]
 //Si la fila es par ponemos un color si es impar ponemos otro color
+
+
+let PersonasTabla=[['Juan','Calle Nº1345','Hombre',32],['Facundo','Calle Nº6548','Hombre',25],['Gema','Calle Nº5684','Mujer',30],['Maira','Calle Nº5687','Mujer',34]];
+
+let personas = document.querySelector("#personas");
+
+for (let i = 0; i < PersonasTabla.length; i++) {
+    let fila=document.createElement("tr");
+    for (let j = 0; j < PersonasTabla[i].length; j++) {
+        let columna=document.createElement("td");
+        columna.innerHTML=`${PersonasTabla[i][j]}`;
+        fila.appendChild(columna);
+        
+    }
+    if (i%2==0) {
+        fila.style.background="blue";
+        fila.style.color="yellow";
+    }else{
+        fila.style.background="red";
+        fila.style.color="white";
+    }
+    personas.appendChild(fila);
+    
+}
