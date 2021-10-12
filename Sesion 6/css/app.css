@@ -1,0 +1,94 @@
+:root {
+  --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+  --GrayishBlue: hsl(212, 23%, 69%);
+  --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  background-color: var(--LightGrayishBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  width: 49%;
+}
+.card__img {
+  flex: 0 0 40%;
+}
+.card__img img {
+  object-fit: cover;
+  object-position: left;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.card__content {
+  flex: 0 0 60%;
+  padding: 40px;
+  background-color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.card__content h1 {
+  color: var(--VeryDarkGrayishBlue);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.card__content .content__content {
+  color: var(--GrayishBlue);
+  margin-bottom: 15px;
+}
+
+.card__perfil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__perfil .perfil__datos {
+  display: flex;
+}
+.card__perfil .perfil__datos .perfil__info {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+.card__perfil .perfil__datos .perfil__info h2 {
+  font-size: 13px;
+  color: var(--VeryDarkGrayishBlue);
+  margin-bottom: 7px;
+}
+.card__perfil .perfil__datos .perfil__info p {
+  color: var(--GrayishBlue);
+}
+.card__perfil img {
+  width: 45px;
+  border-radius: 50%;
+}
+.card__perfil .perfil__media {
+  background-color: var(--LightGrayishBlue);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
