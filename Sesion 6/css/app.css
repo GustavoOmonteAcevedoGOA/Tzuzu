@@ -99,6 +99,10 @@ body {
   height: 45px;
   border-radius: 50%;
 }
+.card__perfil .container__media {
+  position: relative;
+}
+
 .card__perfil .perfil__media {
   background-color: var(--LightGrayishBlue);
   width: 35px;
@@ -113,6 +117,33 @@ body {
 
 .card__share {
   background-color: var(--VeryDarkGrayishBlue);
+  position: absolute;
+  border-radius: 12px;
+  padding: 17px 30px;
+  top: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__share::after {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--VeryDarkGrayishBlue);
+  transform: translateX(-50%) rotate(45deg);
+}
+.card__share p {
+  color: var(--GrayishBlue);
+  letter-spacing: 4.5px;
+}
+
+.card__share svg {
+  margin-left: 20px;
 }
 .oculto {
   display: none;
