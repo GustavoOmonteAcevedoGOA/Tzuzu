@@ -7,3 +7,10 @@ boton.onclick = function(){
 
 //position
 //static,absolute,relative,sticky,
+
+let Animales ={
+    nombre: "Dino",
+    edad:2,
+    color:"blanco",
+    tipoDePelaje:"pelaje corto"
+}
