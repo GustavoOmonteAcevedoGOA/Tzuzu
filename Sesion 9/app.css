@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+.container__card {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card__pizza {
+  text-align: center;
+  margin: 50px auto;
+  border: 1px solid #000000;
+}
+
+.card__pizza p {
+  font-size: 21px;
+}
+
+.container__card2 {
+  display: flex;
+  flex-wrap: wrap;
+}
