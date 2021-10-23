@@ -107,7 +107,14 @@ let pizzas =[
       price: 499,
       size: "Small",
       image: "https://github.com/GustavoOmonteAcevedoGOA/Tzuzu/blob/main/Sesion%209/imagenes/pizza3.jpg?raw=true",
-      extras: "Tomate, Aceitunas"
+      extras: "Tomate, Aceitunas",
+      descripcion: `
+      <br/>
+      Calorías: 276 Kcal <br/>
+      Proteínas: 10 g <br/>
+      Grasa: 13 g <br/>
+      Hidratos de Carbono: 29 g <br/>
+      `,
     },
     {
       name: "Pepperoni",
