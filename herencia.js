@@ -66,7 +66,14 @@ console.log(cliente1.saldo,cliente1.saldo);
 
 const boton = document.querySelector('#boton');
 const formulario = document.querySelector('#formulario');
+
+
+const formulario = document.querySelector('#formulario');
 boton.onclick = function(){
 
+}
+formulario.onsubmit = function(event){
+    event.preventDefault();
+    
 }
 
