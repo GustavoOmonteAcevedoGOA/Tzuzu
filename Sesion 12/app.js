@@ -17,19 +17,32 @@ class Character{
 }
 
 const main = new Character("Facundo", 1000, 250);
-const jefe = new Character("Tzuzul", 5000, 50);
+const mainName = document.getElementById("main-name");
+mainName.innerText = main.name;
+const mainHealth = document.getElementById("main-health");
+mainHealth.innerText = `vida: ${main.health}`;
+const mainAttackPower = document.getElementById("main-attackPower");
+mainAttackPower.innerText = `poder de ataque: ${main.attackPower}`;
+// imagen boton
+const mainAttack = document.getElementById("main-attack");
 
-main.attack(jefe);
-jefe.attack(main);
+
+
+const jefe = new Character("Tzuzul", 5000, 50);
+const jefeName = document.getElementById("jefe-name");
+jefeName.innerText =jefe.name;
+const jefeHealth = document.getElementById("jefe-health");
+jefeHealth.innerText = `vida: ${jefe.health}`;
+const jefeAttackPower = document.getElementById("jefe-attackPower");
+jefeAttackPower.innerText = `poder de ataque: ${jefe.attackPower}`;
+const jefeAttack = document.getElementById("jefe-attack");
 
 
 mainAttack.onclick = function(){
-    mainAttack.classList.toggle("active");
     main.attack(jefe);
-    jefemainth.innerText = jefe.health;
+    jefeHealth.innerText = `vida: ${jefe.health}`;
 }
 jefeAttack.onclick = function(){
-    jefeAttack.classList.toggle("active");
     jefe.attack(main);
-    mainHealth.innerText = main.health;
+    mainHealth.innerText = `vida: ${main.health}`;
 }
