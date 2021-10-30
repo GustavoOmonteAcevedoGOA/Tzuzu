@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vidego Game</title>
+    <style>
+      .personas {
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+      }
+      #hero,
+      #villain {
+        border-radius: 2rem;
+        text-align: center;
+        height: 10rem;
+        width: 10rem;
+      }
+      #hero {
+        background: green;
+        transition: 0.2s;
+      }
+      #villain {
+        background: red;
+        transition: 0.2s;
+      }
+      #hero:active,
+      #villain:active {
+        background: blue;
+        transition: 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="personas">
+      <div id="hero">
+        <h3>Heroe</h3>
+        <p id="vida_h"></p>
+      </div>
+      <div id="villain">
+        <h3>Villano</h3>
+        <p id="vida_v"></p>
+      </div>
+    </div>
+
+    <script>
+      class Vida {
+        constructor(vida) {
+          this.vida = vida;
+        }
+      }
+      class Heroe extends Vida {
+        constructor(vida) {
+          super(vida);
+        }
+        ataque(dano, villano) {
+          villano.vida = villano.vida - dano;
+        }
+      }
+      class Villano extends Vida {
+        constructor(vida) {
+          super(vida);
+        }
+        ataque(dano, heroe) {
+          heroe.vida = heroe.vida - dano;
+        }
+      }
+
+      let juan = new Heroe(100);
+      let tzuzul = new Villano(100);
+
+      let hero = document.getElementsByClassName("hero");
+      let villain = document.getElementsByClassName("villain");
+
+      juan.ataque(20, tzuzul);
+      console.log(tzuzul);
+    </script>
+  </body>
+</html>

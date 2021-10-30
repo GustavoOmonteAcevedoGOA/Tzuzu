@@ -54,8 +54,8 @@ class Frecuente extends Cliente{
     }
 }
 
-let cliente1 = new Regular(1000);
-let cliente2 = new Regular(1000);
+let cliente1 = new Nuevo(2000);
+let cliente2 = new Nuevo(3000);
 let cliente3 = new Regular(1000);
 
 
@@ -65,15 +65,31 @@ cliente2.transferir(108,cliente1);
 console.log(cliente1.saldo,cliente1.saldo);
 
 const boton = document.querySelector('#boton');
-const formulario = document.querySelector('#formulario');
+const formulario = document.querySelector('.formulario');
+const formulario2 = document.querySelector('.formulario2');
 
 
-const formulario = document.querySelector('#formulario');
-boton.onclick = function(){
+const saldo_cliente1 = document.querySelector('#saldo_cliente1');
+const saldo_cliente2 = document.querySelector('#saldo_cliente2');
 
-}
 formulario.onsubmit = function(event){
     event.preventDefault();
+
+    let input= document.getElementById('cantidad');
+    cliente1.transferir(Number(input.value), cliente2)
+
+    saldo_cliente1.innerText = cliente1.saldo
+    saldo_cliente2.innerText = cliente2.saldo
+    
+}
+formulario2.onsubmit = function(event){
+    event.preventDefault();
+
+    let input= document.getElementById('cantidad2');
+    cliente2.transferir(Number(input.value), cliente1)
+
+    saldo_cliente1.innerText = cliente1.saldo
+    saldo_cliente2.innerText = cliente2.saldo
     
 }
 

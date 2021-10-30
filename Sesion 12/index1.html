@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main-attack{
+            width: 100px;
+            height: 100px;
+        }
+
+        #main-attack:hover{
+            cursor: pointer;
+        }
+
+        #jefe-attack{
+            width: 100px;
+            height: 100px;
+        }
+
+        #jefe-attack:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p id="main-name">nombre</p>
+        <p id="main-health">vida</p>
+        <p id="main-attackPower">poder de ataque</p>
+        <img src="https://openclipart.org/image/800px/321023" alt="" id="main-attack">
+        <!-- <button id="main-attack">atacar</button> -->
+    </div>
+    <div id="jefe">
+        <p id="jefe-name">nombre</p>
+        <p id="jefe-health">vida</p>
+        <p id="jefe-attackPower">poder de ataque</p>
+        <img src="https://openclipart.org/image/800px/321023" alt="" id="jefe-attack">
+        <!-- <button id="jefe-attack">atacar</button> -->
+    </div>
+    <script>
+        class Character {
+            constructor(name, health, attackPower) {
+                this.name = name;
+                this.health = health;
+                this.attackPower = attackPower;
+            }
+
+            attack(object) {
+                object.setHealth(object.getHealth() - this.attackPower);
+                console.log(`${this.name} ha atacado a ${object.name} y le ha quitado ${this.attackPower} de vida`);
+            }
+
+            getHealth() {
+                return this.health;
+            }
+
+            setHealth(health) {
+                this.health = health;
+            }
+        }
+
+        const main = new Character("Facundo", 1000, 250);
+        const mainName = document.getElementById("main-name");
+        mainName.innerText = main.name;
+        const mainHealth = document.getElementById("main-health");
+        mainHealth.innerText = `vida: ${main.health}`;
+        const mainAttackPower = document.getElementById("main-attackPower");
+        mainAttackPower.innerText = `poder de ataque: ${main.attackPower}`;
+        const mainAttack = document.getElementById("main-attack");
+        
+       
+        const jefe = new Character("Tzuzul", 5000, 50);
+        const jefeName = document.getElementById("jefe-name");
+        jefeName.innerText = jefe.name;
+        const jefeHealth = document.getElementById("jefe-health");
+        jefeHealth.innerText = `vida: ${jefe.health}`;;
+        const jefeAttackPower = document.getElementById("jefe-attackPower");
+        jefeAttackPower.innerText = `poder de ataque: ${jefe.attackPower}`;;
+        const jefeAttack = document.getElementById("jefe-attack");
+
+        mainAttack.onclick = function() {
+            main.attack(jefe);
+            jefeHealth.innerText = `vida: ${jefe.health}`;
+        }
+        
+        jefeAttack.onclick = function() {            
+            jefe.attack(main);
+            mainHealth.innerText = `vida: ${main.health}`;
+        }
+    </script>
+</body>
+</html>
