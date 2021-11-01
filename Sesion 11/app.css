@@ -32,4 +32,51 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.2s ease all;
+  margin-bottom: 30px;
+  padding: 30px;
+  position: relative;
+  z-index: 200;
+  border: 2px solid transparent;
+}
+
+.select.active,
+.select:hover {
+  box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.16);
+  border: 2px solid #213f8f;
+}
+
+.select.active::before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  border-top: 15px solid #213f8f;
+  /* border-right: 15px solid red;
+  border-left: 15px solid yellow;
+  border-bottom: 15px solid black; */
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transition: calc(50%-15px);
+}
+.select .icono {
+  font-size: 30px;
+  margin-left: 30px;
+  color: #213f8f;
+}
+
+.tiutlo {
+  margin-bottom: 10px;
+  color: #000;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.descripcion {
+  font-size: 10px;
+  color: #434343;
 }
