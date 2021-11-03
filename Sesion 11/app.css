@@ -42,7 +42,7 @@ a {
 
 .select.active,
 .select:hover {
-  box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
   border: 2px solid #213f8f;
 }
 
@@ -69,7 +69,7 @@ a {
   color: #213f8f;
 }
 
-.tiutlo {
+.titulo {
   margin-bottom: 10px;
   color: #000;
   font-weight: 600;
@@ -79,4 +79,39 @@ a {
 .descripcion {
   font-size: 10px;
   color: #434343;
+}
+.opciones {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+  max-height: 400px;
+  overflow: auto;
+  z-index: 100;
+  width: 100%;
+  display: none;
+}
+.opciones.active {
+  display: block;
+}
+
+/*--===========Animacion=============--*/
+.contenido-opcion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease all;
+  padding: 30px;
+}
+.contenido-opcion img {
+  width: 60px;
+  height: 60px;
+  margin-right: 30px;
+}
+.contenido-opcion:hover {
+  background-color: #213f8f;
+}
+
+.contenido-opcion:hover .titulo,
+.contenido-opcion:hover .descripcion {
+  color: #fff;
 }
