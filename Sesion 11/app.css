@@ -23,6 +23,11 @@ a {
   margin: auto;
   position: relative;
 }
+@media (max-width: 800px) {
+  .selectbox {
+    width: 100%;
+  }
+}
 .select {
   background-color: #fff;
   width: 100%;
@@ -92,14 +97,27 @@ a {
 }
 .opciones.active {
   display: block;
+  animation: fadeIn 0.3s forwards;
 }
 
 /*--===========Animacion=============--*/
+@keyframes fadeIn {
+  from {
+    transform: translateY(-200px) scale(0.5);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
 .contenido-opcion {
   width: 100%;
   display: flex;
   align-items: center;
   transition: 0.2s ease all;
+}
+
+.opciones .contenido-opcion {
   padding: 30px;
 }
 .contenido-opcion img {
@@ -107,11 +125,11 @@ a {
   height: 60px;
   margin-right: 30px;
 }
-.contenido-opcion:hover {
+.opciones .contenido-opcion:hover {
   background-color: #213f8f;
 }
 
-.contenido-opcion:hover .titulo,
-.contenido-opcion:hover .descripcion {
+.opciones .contenido-opcion:hover .titulo,
+.opciones .contenido-opcion:hover .descripcion {
   color: #fff;
 }
