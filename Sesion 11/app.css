@@ -12,6 +12,11 @@ body {
 a {
   text-decoration: none;
 }
+.contenedor-tramites {
+  display: flex;
+}
+@media (max-width: 800px) {
+}
 .contenedor {
   width: 90%;
   max-width: 1000px;
@@ -98,6 +103,7 @@ a {
 .opciones.active {
   display: block;
   animation: fadeIn 0.3s forwards;
+  position: absolute;
 }
 
 /*--===========Animacion=============--*/

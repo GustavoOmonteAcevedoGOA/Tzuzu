@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="busqueda">
+    <button class="boton-buscar">Buscar</button>
+
+    <div class="lista">
+
+    </div>
+    <div class="busqueda">
+
+    </div>
+    <div id="persona">
+
+    </div>
+    <script>
+        let persona ={
+            nombre:"Gustavo",
+            ciudad:"Cochabamba",
+            intereses:[1,2,3,4,5]
+        };
+
+        //Desestructuracion
+        /* let nombre= persona.nombre;
+        let ciudad= persona.ciudad;
+        let intereses= persona.intereses; */
+        let {nombre,ciudad,intereses}=persona;
+        let [intereses1,intereses2,intereses3,intereses4,intereses5]= intereses;
+
+        console.log(nombre,ciudad,intereses);
+        console.log(intereses1,intereses2,intereses3,intereses4,intereses5);
+        
+        function imprimir({nombre,ciudad,intereses}){
+            const detalles = document.querySelector('#persona');
+            let p1 = document.createElement("p");
+            p1.innerHTML= nombre;
+            let p2 = document.createElement("p");
+            p2.innerHTML= ciudad;
+            let p3 = document.createElement("p");
+            p3.innerHTML= intereses;
+            
+            detalles.appendChild(p1);
+            detalles.appendChild(p2);
+            detalles.appendChild(p3);
+        }
+        
+
+        imprimir(persona);
+        let frutas = ["🍎","🍊","🍓","🍌","🍍","🍓","🍑","🍏","🍐","🍑"];
+
+        const lista = document.querySelector('.lista');
+        const botonBuscar = document.querySelector('.boton-buscar');
+        const busqueda = document.querySelector('.busqueda');
+        const input = document.querySelector('#busqueda');
+                
+                
+        lista.innerHTML=frutas;
+        
+        botonBuscar.addEventListener('click',()=>{
+            let buscador=input.value;
+
+            let resultado = frutas.filter(function(fruta){
+                if(fruta == buscador){
+                    return fruta;
+                }
+            });
+            console.log(resultado.length);
+            
+            if(resultado.length!= 0){
+                busqueda.innerHTML= resultado;
+            }else{
+                busqueda.innerHTML= "no se encontro";
+            }
+
+            
+        })
+        
+        
+        //Agregar elementos al final
+        frutas.push("🌽");
+        //Quitar elementos del final
+        frutas.pop();
+        //Agregar elementos al Incio
+        frutas.unshift("🍐");
+        //Quitar elementos del Inicio
+        frutas.shift();
+        //Devuelve la posicion del primer elemento que busque
+        console.log(frutas.indexOf("🍌"));
+
+        //Encontrar un elemento y guardarlo
+        let encontrado = frutas.find(function(fruta){
+            if(fruta=="🍑"){
+                return fruta;
+            }
+        });
+        console.log(encontrado);
+
+        //Nos encuetra multiples : filtrando
+        let sandias = frutas.filter(function(fruta){
+            if(fruta == "🍓"){
+                return fruta;
+            }
+        });
+        console.log(sandias);
+        
+
+         
+        </script>
+</body>
+</html>
