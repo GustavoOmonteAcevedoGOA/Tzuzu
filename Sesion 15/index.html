@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="usuarios">
+
+    </div>
+    <script>
+        //async await
+        //promesas
+
+        //Consumir una API
+        async function pedirInformacion(){
+            let resultado =await fetch("https://randomuser.me/api/?results=50");
+            let json = await resultado.json();
+
+            //Instrucciones
+            let data = json.results;
+            console.log(data);
+            
+            const divUsuarios = document.querySelector('#usuarios');
+
+            for (let i = 0; i < data.length; i++) {
+                let img = document.createElement("img");
+                let pnombre = document.createElement("p");
+                let pgenero = document.createElement("p");
+                let detalles = document.createElement("div");
+                img.src = data[i].picture.medium;
+                pnombre.innerHTML = `${data[i].name.title} ${data[i].name.first} ${data[i].name.last}`;
+                pgenero.innerHTML = data[i].gender;
+
+                detalles.appendChild(img);
+                detalles.appendChild(pnombre);
+                detalles.appendChild(pgenero);
+
+                divUsuarios.appendChild(detalles)
+                
+            }
+
+
+
+
+
+
+
+        }
+        pedirInformacion();
+    </script>
+</body>
+</html>
